@@ -15,7 +15,7 @@ void _push(stack_t **stack, unsigned int line_number)
 
 	if( i != n)
 	{
-		printf("Error: Line <line_number>: usage: push integer\n");
+		printf(stderr,":usage: push integer\n");
 		exit(EXIT_FAILURE);
 	}
 
