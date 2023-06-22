@@ -9,10 +9,9 @@
  * exit: EXIT_FAILURE
  */
 
-void push(int n)
+void _push(stack_t **stack, unsigned int line_number)
 {
 	int i = 0;
-	int arg = 0;
 
 	if( i != n)
 	{
