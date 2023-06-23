@@ -11,14 +11,34 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	if( i == n)
+	int input[100] = {0};
+	stack_t *temp = NULL;
+	
+	temp = malloc(sizeof(stack_t));
+	if (temp == NULL)
 	{
-		printf(":usage: push integer\n");
+		printf("stack overflow\n");
 		exit(EXIT_FAILURE);
 	}
-
 	else
 	{
-		printf("Enter the element to be inserted: ");
+		if (argc != 2)
+		{
+			printf("L%d: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
+
+		if (!is_integer(argv[1]))
+		{
+			printf("L%d: usage: push integer\n", line_number);
+ 			exit(EXIT_FAILURE);
+		}
+
+	printf("Enter an element to be inserted: ");
+	fgets(input, sizeof(input), stdin);
+	temp->n = atoi(input);
+	temp->next = *stack;
+	*stack = temp;
+	line_number += 1;
 	}
 }
