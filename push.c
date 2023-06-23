@@ -9,13 +9,11 @@
  * exit: EXIT_FAILURE
  */
 
-void _push(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number)
 {
-	int i = 0;
-
-	if( i != n)
+	if( i == n)
 	{
-		printf(stderr,":usage: push integer\n");
+		printf(":usage: push integer\n");
 		exit(EXIT_FAILURE);
 	}
 
